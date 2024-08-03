@@ -1,0 +1,72 @@
+.otp-main {
+  background-color: #0882DE;
+  height: 100vh;
+}
+.otp-main .otp-logo {
+  padding-top: 15px;
+}
+.otp-main .otp-logo img {
+  width: 250px;
+}
+.otp-main .otp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 80px;
+  color: white;
+}
+.otp-main form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  gap: 20px;
+}
+.otp-main form .otp-input-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.otp-main form .otp-input-group input {
+  width: 80px;
+  height: 75px;
+  border-radius: 8px;
+  border: 2px solid #00A7ED;
+  font-size: 45px;
+  text-align: center;
+  color: #00A7ED;
+}
+.otp-main form .back-resend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 430px;
+}
+.otp-main form .back-resend p {
+  text-decoration: underline;
+  font-size: 14px;
+}
+.otp-main form .back-resend h3 {
+  color: #0F3DDE;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+.otp-main form .signup-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 25px;
+  gap: 8px;
+}
+.otp-main form .signup-button button {
+  width: 500px;
+  border: none;
+  font-size: 18px;
+  padding: 15px;
+  background-color: #00A7ED;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}/*# sourceMappingURL=otp.css.map */

@@ -1,0 +1,115 @@
+.signup-main {
+  display: flex;
+  justify-content: space-between;
+}
+.signup-main .signup-welcome {
+  background-color: #0882DE;
+  width: 730px;
+  height: 800px;
+}
+.signup-main .signup-welcome .signup-logo {
+  padding-top: 10px;
+}
+.signup-main .signup-welcome .signup-logo img {
+  width: 260px;
+}
+.signup-main .signup-fields {
+  width: 840px;
+  padding-inline: 50px;
+  padding-right: 75px;
+  padding-top: 18px;
+}
+.signup-main .signup-fields .input-field {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+.signup-main .signup-fields .input-field label {
+  font-size: 18px;
+  font-weight: 500;
+}
+.signup-main .signup-fields .input-field input {
+  background-color: #D9D9D9;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.signup-main .signup-fields .input-field select {
+  background-color: #D9D9D9;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.signup-main .signup-fields h1 {
+  font-size: 50px;
+  font-weight: 500;
+}
+.signup-main .signup-fields .inputs-field {
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.signup-main .signup-fields .inputs-field label {
+  font-weight: 500;
+  font-size: 14px;
+}
+.signup-main .signup-fields .inputs-field label span {
+  text-decoration: underline;
+}
+.signup-main form {
+  padding-top: 30px;
+}
+.signup-main form .signup-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15px;
+  gap: 8px;
+}
+.signup-main form .signup-button button {
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  padding: 15px;
+  background-color: #00A7ED;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+.signup-main form .signup-button h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.signup-main form .signup-button h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.signup-main form .signup-button h2 a {
+  color: #0F3DDE;
+}
+.signup-main .welcome-content .main-img {
+  padding-inline: 50px;
+  width: 100%;
+  text-align: center;
+}
+.signup-main .welcome-content .main-img img {
+  width: 70%;
+}
+.signup-main .welcome-content .welcome-text {
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.signup-main .welcome-content .welcome-text h1 {
+  font-size: 35px;
+  color: white;
+  font-weight: 500;
+}
+.signup-main .welcome-content .welcome-text p {
+  font-size: 19px;
+  color: white;
+}/*# sourceMappingURL=signup.css.map */

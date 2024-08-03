@@ -1,0 +1,87 @@
+.individual-report {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px;
+  width: 950px;
+}
+.individual-report .left-report {
+  display: flex;
+  gap: 10px;
+}
+.individual-report .left-report .human {
+  background-color: #00A7ED;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.individual-report .left-report .human i {
+  font-size: 25px;
+  color: white;
+}
+.individual-report .left-report .other {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.individual-report .left-report .other h3 {
+  font-size: 15px;
+  color: #989393;
+  font-weight: 400;
+}
+.individual-report .left-report .other .diagosis {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.individual-report .left-report .other .diagosis h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.individual-report .left-report .other .diagosis p {
+  background-color: #D01717;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  padding-inline: 30px;
+  border-radius: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+.individual-report .left-report .other .bluey {
+  color: #0882DE;
+  cursor: pointer;
+}
+.individual-report .summary {
+  color: black;
+  padding-block: 5px;
+}
+.individual-report .right-report {
+  margin-left: auto;
+}
+.individual-report .right-report p {
+  color: #989393;
+  font-size: 15px;
+}
+
+.reports {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.download {
+  color: #0882DE;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+  cursor: pointer;
+}/*# sourceMappingURL=usereport.css.map */

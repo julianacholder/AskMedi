@@ -1,0 +1,103 @@
+.login-page {
+  display: flex;
+}
+.login-page .logo-img {
+  background-color: #0882DE;
+  width: 730px;
+  height: 800px;
+}
+.login-page .logo-img .signup-logo {
+  padding-top: 10px;
+}
+.login-page .logo-img .signup-logo img {
+  width: 260px;
+}
+.login-page form {
+  padding-top: 30px;
+}
+.login-page form .signup-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 8px;
+}
+.login-page form .signup-button button {
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  padding: 15px;
+  background-color: #00A7ED;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+.login-page form .signup-button h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.login-page form .signup-button h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.login-page form .signup-button h2 a {
+  color: #0F3DDE;
+}
+.login-page .login-img {
+  padding-top: 30px;
+  width: 100%;
+}
+.login-page .login-img img {
+  width: 80%;
+}
+
+.welcome-input {
+  width: 840px;
+  padding-inline: 50px;
+  padding-right: 75px;
+  padding-top: 150px;
+}
+.welcome-input h1 {
+  font-weight: 500;
+  font-size: 35px;
+}
+.welcome-input p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.welcome-input .input-field {
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+}
+.welcome-input .input-field label {
+  font-size: 18px;
+  font-weight: 500;
+}
+.welcome-input .input-field .password {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.welcome-input .input-field .password p {
+  font-size: 14px;
+  color: #0F3DDE;
+  font-weight: 500;
+}
+.welcome-input .input-field input {
+  background-color: #D9D9D9;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.welcome-input .inputs-field {
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.welcome-input .inputs-field label {
+  font-weight: 500;
+  font-size: 14px;
+}/*# sourceMappingURL=login.css.map */

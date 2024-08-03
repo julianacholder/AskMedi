@@ -1,0 +1,100 @@
+@import "../variable.scss";
+
+
+
+.individual-report{
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px;
+  width: 950px;
+ 
+  .left-report{
+    display: flex;
+    gap: 10px;
+
+    .human{
+      background-color: $secondary-color;
+      padding: 10px;
+      border-radius: 50%;
+      width: 50px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      
+
+      i{
+        font-size: 25px;
+        color: white;
+      }
+    }
+
+    .other{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    h3{
+      font-size: 15px;
+      color: #989393;
+      font-weight: 400;
+    }
+
+    .diagosis{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h2{
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      p{
+        background-color: #D01717;
+        color: white;
+        font-weight: 600;
+        padding: 10px;
+        padding-inline: 30px;
+       
+        border-radius: 100px;
+        width: fit-content;
+        text-align: center;
+      }
+    }
+
+    .bluey{
+      color: $primary-color;
+      cursor: pointer;
+    }
+    }
+  }
+  .summary{
+    color: black;
+    padding-block: 5px;
+  }
+  .right-report{
+    margin-left: auto;
+
+    p{
+      color: #989393;
+      font-size: 15px;
+    }
+  }
+}
+
+.reports{
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;flex-direction: column;
+  gap: 35px;
+}
+
+.download{
+  color: $primary-color;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+  cursor: pointer;
+}

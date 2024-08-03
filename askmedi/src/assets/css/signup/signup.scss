@@ -1,0 +1,147 @@
+@import "../variable.scss";
+
+.signup-main{
+  display: flex;
+ justify-content: space-between;
+
+ .signup-welcome{
+  background-color: $primary-color;
+  width: 730px;
+  height: 800px;
+ 
+.signup-logo{
+  padding-top: 10px;
+  img{
+    width: 260px;
+  }
+}
+ }
+
+ .signup-fields{
+  width: 840px;
+  padding-inline: 50px;
+  padding-right: 75px;
+  padding-top: 18px;
+
+  .input-field{
+   display: flex;
+   flex-direction: column;
+   padding-top: 12px;
+   label{
+    font-size: 18px;
+    font-weight: 500;
+   }
+
+
+
+   input{
+    background-color: #D9D9D9;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 15px;
+   }
+   select{
+    background-color: #D9D9D9;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 15px;
+   }
+  }
+  h1{
+    font-size: 50px;
+    font-weight: 500;
+  }
+
+  .inputs-field{
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+
+    label{
+      font-weight: 500;
+      font-size: 14px;
+      span{
+        text-decoration: underline;
+      }
+    }
+   
+   
+   
+   }
+ }
+
+ form{
+  padding-top: 30px;
+
+  .signup-button{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 8px;
+
+    button{
+      width: 100%;
+      border: none;
+      font-size: 18px;
+      padding: 15px;
+      background-color: $secondary-color;
+      border-radius: 20px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    
+    h4{
+      font-size: 15px;
+      font-weight: 500;
+    }
+    h2{
+      font-size: 18px;
+      font-weight: 500;
+
+      a{
+        color: #0F3DDE;
+      }
+    }
+  }
+ 
+ }
+
+ .welcome-content{
+  
+ .main-img{
+ padding-inline: 50px;
+ width: 100%;
+ text-align: center;
+
+//  padding-top: 140px;
+ img{
+  width: 70%;
+ }
+
+ }
+
+
+
+  .welcome-text{
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+   
+   
+   h1{
+    font-size: 35px;
+    color: white;
+    font-weight: 500;
+   }
+   p{
+    font-size: 19px;
+    color: white;
+   }
+  }
+ }
+}

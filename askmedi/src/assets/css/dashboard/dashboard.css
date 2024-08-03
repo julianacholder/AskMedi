@@ -1,0 +1,317 @@
+a {
+  text-decoration: none;
+}
+
+.dashboard {
+  display: flex;
+  background-color: #F3F3F3;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.icon-name {
+  cursor: pointer;
+}
+.icon-name.active {
+  background-color: #00A7ED;
+  padding: 20px;
+  padding-left: 50px;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blue-side {
+  width: 360px;
+  background-color: #0882DE;
+  padding-bottom: 30px;
+}
+.blue-side .signup-logo {
+  padding-top: 15px;
+}
+.blue-side .signup-logo img {
+  width: 200px;
+}
+.blue-side .dashboard-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 280px;
+  text-align: center;
+}
+.blue-side .dashboard-tabs .active-tabs {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.blue-side .dashboard-tabs .app-sign {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.blue-side .dashboard-tabs .app-sign .start {
+  border: none;
+  color: white;
+  background-color: #4966CC;
+  padding: 8px;
+  border-radius: 20px;
+  width: 150px;
+  font-size: 16px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.blue-side .dashboard-tabs .app-sign .start:hover {
+  background-color: #224adc;
+}
+
+.icon-name {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-left: 50px;
+}
+.icon-name button {
+  border: none;
+  background-color: transparent;
+  font-size: 17px;
+  color: white;
+}
+.icon-name button:hover {
+  font-weight: 800;
+}
+.icon-name i {
+  color: white;
+  font-size: 23px;
+}
+
+.dashboard-content {
+  padding-top: 40px;
+  padding-inline: 20px;
+  display: flex;
+  padding-bottom: 20px;
+  gap: 30px;
+}
+.dashboard-content h1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.dashboard-content .hello-user {
+  display: flex;
+  gap: 15px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+.dashboard-content .hello-user .header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.dashboard-content .hello-user h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.dashboard-content .hello-user p {
+  font-size: 16px;
+  font-weight: 500;
+}
+.dashboard-content .hello-user i {
+  font-size: 50px;
+  padding-top: 5px;
+}
+.dashboard-content .how-feeling {
+  display: flex;
+  gap: 50px;
+}
+.dashboard-content .how-feeling .smile-text {
+  background-color: white;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+.dashboard-content .how-feeling .smile-text p {
+  color: #574F4F;
+}
+.dashboard-content .how-feeling .smile-text h2 {
+  font-size: 20px;
+}
+.dashboard-content .how-feeling .smile-text .emoji-border {
+  background-color: #00A7ED;
+  padding: 10px;
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.dashboard-content .how-feeling .smile-text .emoji-border i {
+  font-size: 28px;
+  color: white;
+}
+.dashboard-content .medical-why {
+  display: flex;
+  gap: 40px;
+}
+.dashboard-content .medical-why h1 {
+  font-weight: 600;
+}
+.dashboard-content .medical-why .medical {
+  width: 610px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.dashboard-content .medical-why .medical p {
+  border-bottom: 1px solid #A69898;
+}
+.dashboard-content .medical-why .why {
+  width: 300px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 280px;
+}
+.dashboard-content .medical-why .why i {
+  font-size: 25px;
+  color: #00A7ED;
+}
+.dashboard-content .medical-why .why .check-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-profile {
+  width: 400px;
+  background-color: #0882DE;
+  padding-right: 10px;
+}
+.dashboard-profile .outer-border {
+  margin-top: 38px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 300px;
+  border-radius: 20px;
+  height: 720px;
+  margin-left: 10px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+.dashboard-profile .user-details {
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 283px;
+  border-radius: 20px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.dashboard-profile .user-details .name h2 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding: 4px;
+}
+.dashboard-profile .user-details .gender-age {
+  display: flex;
+  gap: 10px;
+}
+.dashboard-profile .user-details .gender-age p {
+  color: white;
+}
+.dashboard-profile .user-details .initials {
+  background-color: #00A7ED;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-profile .user-details .initials h1 {
+  font-size: 40px;
+  color: white;
+}
+.dashboard-profile .bell {
+  width: 40px;
+  background-color: #00A7ED;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+.dashboard-profile .bell i {
+  font-size: 20px;
+  color: white;
+}
+.dashboard-profile .more-resources {
+  padding-top: 55px;
+  padding-left: 20px;
+}
+.dashboard-profile .more-resources h3 {
+  font-size: 20px;
+  color: white;
+}
+.dashboard-profile .more-resources .individual-resource {
+  display: flex;
+  gap: 10px;
+  padding-top: 25px;
+  align-items: center;
+}
+.dashboard-profile .more-resources .individual-resource p {
+  color: white;
+}
+.dashboard-profile .more-resources .individual-resource .resource-border {
+  background-color: white;
+  padding: 10px;
+  width: 50px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-profile .more-resources .individual-resource .resource-border i {
+  font-size: 20px;
+}
+
+.footer {
+  margin-top: 670px;
+}
+.footer ul {
+  display: grid;
+  grid-template-columns: 52% 50%;
+  color: white;
+  list-style: none;
+  gap: 7px;
+  padding-left: 20px;
+  padding-right: 5px;
+}/*# sourceMappingURL=dashboard.css.map */

@@ -1,0 +1,84 @@
+@import ".././variable.scss";
+
+
+.otp-main{
+  background-color: $primary-color;
+  height: 100vh;
+
+
+  .otp-logo{
+    padding-top: 15px;
+    img{
+      width: 250px;
+    }
+  }
+  .otp-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 80px;
+    color: white;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 20px;
+    .otp-input-group{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+     
+
+      input{
+        width: 80px;
+        height: 75px;
+        border-radius: 8px;
+        border: 2px solid $secondary-color;
+        font-size: 45px;
+        text-align: center;
+        color: $secondary-color;
+      }
+    }
+
+    .back-resend{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 430px;
+
+      p{
+        text-decoration: underline;
+        font-size: 14px;
+      }
+
+      h3{
+        color: #0F3DDE;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .signup-button{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 25px;
+      gap: 8px;
+  
+      button{
+        width: 500px;
+        border: none;
+        font-size: 18px;
+        padding: 15px;
+        background-color: $secondary-color;
+        border-radius: 20px;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+}

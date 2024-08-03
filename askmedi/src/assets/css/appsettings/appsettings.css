@@ -1,0 +1,88 @@
+.left-settings {
+  display: flex;
+  gap: 20px;
+}
+.left-settings .left-initial {
+  background-color: #00A7ED;
+  width: 90px;
+  height: 85px;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-settings .left-initial h1 {
+  font-size: 50px;
+  color: white;
+}
+
+.first-part {
+  margin-top: 45px;
+  display: flex;
+  background-color: white;
+  padding: 50px;
+  gap: 120px;
+  width: 950px;
+  border-radius: 20px;
+  height: 230px;
+  align-items: center;
+}
+.first-part .ok-user h2 {
+  font-size: 30px;
+}
+.first-part .ok-user h1 {
+  font-size: 20px;
+}
+
+.second-part {
+  display: flex;
+  gap: 60px;
+}
+.second-part .user-icon {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 440px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+}
+.second-part .hospitals {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 440px;
+  height: 280px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-left: 40px;
+}
+.second-part .individual-hosiptals {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.second-part .individual-hosiptals p {
+  font-weight: 500;
+}
+.second-part .individual-hosiptals .hospital-icon {
+  background-color: #00A7ED;
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.second-part .individual-hosiptals .hospital-icon i {
+  font-size: 23px;
+  color: white;
+}
+
+.app-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}/*# sourceMappingURL=appsettings.css.map */
