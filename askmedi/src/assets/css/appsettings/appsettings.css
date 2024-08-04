@@ -23,7 +23,7 @@
   background-color: white;
   padding: 50px;
   gap: 120px;
-  width: 950px;
+  width: 100%;
   border-radius: 20px;
   height: 230px;
   align-items: center;
@@ -85,4 +85,61 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  .app-settings {
+    padding-top: 80px;
+  }
+  .app-settings .settings-header {
+    text-align: center;
+  }
+}
+@media (max-width: 690px) {
+  .second-part {
+    gap: 40px;
+  }
+  .second-part .hospitals {
+    padding-left: 10px;
+    width: 100%;
+  }
+  .second-part .hospitals p br {
+    display: none;
+  }
+  .second-part .user-icon {
+    width: 100%;
+  }
+  .second-part .user-icon img {
+    width: 100%;
+  }
+}
+@media (max-width: 585px) {
+  .first-part {
+    gap: 60px;
+    text-wrap: nowrap;
+  }
+}
+@media (max-width: 500px) {
+  .first-part {
+    gap: 40px;
+  }
+  .second-part {
+    flex-direction: column;
+  }
+  .second-part .user-icon img {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .second-part .hospitals {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 460px) {
+  .first-part {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=appsettings.css.map */

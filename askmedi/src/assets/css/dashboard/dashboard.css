@@ -2,15 +2,37 @@ a {
   text-decoration: none;
 }
 
+.personal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+  text-align: center;
+  background-color: #F3F3F3;
+}
+.personal h1 {
+  font-size: 40px;
+  color: #00A7ED;
+}
+
+.responsive-logo {
+  display: none;
+}
+.responsive-logo img {
+  max-width: 200px;
+}
+
 .dashboard {
   display: flex;
   background-color: #F3F3F3;
+  width: 100%;
 }
 
 .row {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 
 .icon-name {
@@ -25,7 +47,7 @@ a {
 }
 
 .blue-side {
-  width: 360px;
+  width: 15%;
   background-color: #0882DE;
   padding-bottom: 30px;
 }
@@ -46,11 +68,14 @@ a {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  display: flex;
+  flex-direction: column;
 }
 .blue-side .dashboard-tabs .app-sign {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  justify-content: center;
 }
 .blue-side .dashboard-tabs .app-sign .start {
   border: none;
@@ -93,6 +118,7 @@ a {
   display: flex;
   padding-bottom: 20px;
   gap: 30px;
+  width: 65%;
 }
 .dashboard-content h1 {
   font-size: 18px;
@@ -125,12 +151,13 @@ a {
 }
 .dashboard-content .how-feeling {
   display: flex;
-  gap: 50px;
+  gap: 20px;
 }
 .dashboard-content .how-feeling .smile-text {
   background-color: white;
   padding: 20px;
-  width: 280px;
+  width: 300px;
+  width: 100%;
   text-align: center;
   border-radius: 20px;
   display: flex;
@@ -201,7 +228,7 @@ a {
 }
 
 .dashboard-profile {
-  width: 400px;
+  width: 20%;
   background-color: #0882DE;
   padding-right: 10px;
 }
@@ -209,7 +236,7 @@ a {
   margin-top: 38px;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  width: 300px;
+  max-width: 300px;
   border-radius: 20px;
   height: 720px;
   margin-left: 10px;
@@ -219,7 +246,7 @@ a {
 .dashboard-profile .user-details {
   border-right: 1px solid white;
   border-bottom: 1px solid white;
-  width: 283px;
+  width: 105%;
   border-radius: 20px;
   height: 250px;
   display: flex;
@@ -308,10 +335,338 @@ a {
 }
 .footer ul {
   display: grid;
-  grid-template-columns: 52% 50%;
+  grid-template-columns: 1fr 1fr;
   color: white;
   list-style: none;
   gap: 7px;
   padding-left: 20px;
   padding-right: 5px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 11;
+}
+.hamburger div {
+  width: 27px;
+  height: 4px;
+  background-color: black;
+  margin: 3px 0;
+  transition: all 0.3s;
+  border-radius: 20px;
+}
+
+.hamburger.open div {
+  background-color: black;
+  width: 28px;
+}
+.hamburger.open div:nth-child(1) {
+  transform: rotate(40deg) translate(9px, 9px);
+}
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-46deg) translate(5px, -5px);
+}
+
+.responsive-menu {
+  display: none;
+}
+
+.responsive-nav {
+  display: flex;
+  position: absolute;
+  padding-top: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 40px;
+  width: 100%;
+  display: none;
+}
+.responsive-nav .ini-bell {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+.responsive-nav .ini-bell .responsive-initials {
+  background-color: #00A7ED;
+  border-radius: 50%;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.responsive-nav .ini-bell .responsive-initials h1 {
+  font-size: 25px;
+  color: white;
+}
+.responsive-nav .ini-bell .other-bell {
+  background-color: #00A7ED;
+  border-radius: 50%;
+  width: 48px;
+  height: 45px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.responsive-nav .ini-bell .other-bell i {
+  font-size: 20px;
+  color: white;
+}
+
+@media (max-width: 1380px) {
+  .icon-name {
+    padding-left: 30px;
+  }
+  .icon-name.active {
+    padding-left: 30px;
+  }
+  .blue-side .dashboard-tabs .app-sign .start {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 1300px) {
+  .dashboard-profile .user-details .initials h1 {
+    font-size: 35px;
+  }
+  .dashboard-profile .user-details .name h2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 1245px) {
+  .icon-name {
+    padding-left: 20px;
+  }
+  .icon-name.active {
+    padding-left: 20px;
+  }
+  .blue-side .dashboard-tabs .app-sign .start {
+    margin-left: 20px;
+  }
+  .dashboard-profile .user-details .gender-age {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 1150px) {
+  .icon-name {
+    padding-left: 10px;
+  }
+  .icon-name.active {
+    padding-left: 10px;
+  }
+  .blue-side .signup-logo img {
+    width: 170px;
+  }
+  .blue-side .dashboard-tabs .app-sign .start {
+    margin-left: 10px;
+  }
+  .dashboard-profile .user-details .gender-age {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 1080px) {
+  .blue-side {
+    display: none;
+  }
+  .dashboard-profile {
+    display: none;
+  }
+  .dashboard-content {
+    width: 100%;
+    padding-top: 90px;
+    display: block;
+  }
+  .dashboard-content .home-header {
+    text-align: center;
+  }
+  .responsive-logo {
+    display: block;
+    position: absolute;
+    padding-top: 10px;
+  }
+  .row {
+    padding-top: 80px;
+  }
+  .hamburger {
+    display: flex;
+    z-index: 10;
+    top: 80px;
+  }
+  .responsive-nav {
+    display: flex;
+  }
+  .responsive-menu {
+    position: fixed;
+    top: 150px;
+    left: 20px;
+    width: 400px;
+    height: calc(90vh - 60px);
+    background: #0882DE;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+    color: white;
+    font-size: 20px;
+    display: block;
+  }
+  .menu-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .menu-item i {
+    margin-right: 10px;
+  }
+  .menu-item.active {
+    background: #00A7ED;
+  }
+  .user-menu {
+    position: fixed;
+    top: 160px;
+    right: 30px;
+    width: 300px;
+    height: 180px;
+    padding: 15px;
+    background: #0882DE;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+    color: white;
+  }
+  .user-menu .user-menu-header {
+    text-align: center;
+    color: white;
+  }
+  .user-menu .res-age {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+  }
+  .name-card {
+    padding-top: 15px;
+    text-align: center;
+  }
+  .name-card h2 {
+    font-weight: 500;
+  }
+  .close-icon {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media (max-width: 660px) {
+  .dashboard-content .how-feeling .smile-text {
+    padding: 10px;
+  }
+  .dashboard-content .medical-why {
+    gap: 20px;
+  }
+  .dashboard-content .medical-why .why {
+    padding: 20px;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (max-width: 540px) {
+  .dashboard-content .how-feeling {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  .dashboard-content .how-feeling .smile-text {
+    padding: 10px;
+  }
+  .dashboard-content .medical-why {
+    flex-direction: column;
+  }
+  .dashboard-content .medical-why .medical {
+    width: 100%;
+  }
+  .dashboard-content .medical-why .why {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .dashboard-content h1 {
+    font-size: 16px;
+  }
+  .dashboard-content .how-feeling .smile-text h2 {
+    font-size: 18px;
+  }
+  .dashboard-content .how-feeling .smile-text p {
+    font-size: 15px;
+  }
+  .dashboard-content .home-header {
+    font-size: 16px;
+  }
+  .dashboard-content .hello {
+    padding-left: 34px;
+    padding-top: 20px;
+  }
+  .dashboard-content .hello-user {
+    padding: 15px;
+  }
+  .dashboard-content .hello-user i {
+    font-size: 40px;
+    position: absolute;
+  }
+  .dashboard-content .hello-user p {
+    padding-top: 4px;
+    font-size: 15px;
+  }
+  .dashboard-content .hello-user h1 {
+    font-size: 18px;
+  }
+  .dashboard-content .medical-why p {
+    font-size: 15px;
+  }
+  .dashboard-content .medical-why .medical {
+    padding: 15px;
+  }
+  .responsive-logo img {
+    width: 160px;
+  }
+  .hamburger {
+    scale: 0.8;
+  }
+  .responsive-nav {
+    padding-inline: 15px;
+  }
+  .responsive-nav .ini-bell {
+    scale: 0.8;
+  }
+  .responsive-menu {
+    left: 0px;
+    font-size: 18px;
+  }
+  .row {
+    gap: 20px;
+  }
+  .user-menu {
+    width: 280px;
+    height: 160px;
+  }
+  .user-menu h2 {
+    font-size: 20px;
+  }
+  .user-menu .res-age p {
+    font-size: 16px;
+  }
+  .name-card h2 {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=dashboard.css.map */

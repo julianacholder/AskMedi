@@ -7,12 +7,13 @@
  .logo-img{
   background-color: $primary-color;
   width: 730px;
-  height: 800px;
+ max-height: 800px;
+
  
 .signup-logo{
   padding-top: 10px;
   img{
-    width: 260px;
+    width: 270px;
   }
 }
  }
@@ -56,12 +57,14 @@
  }
 
  .login-img{
-    padding-top: 30px;
-    width: 100%;
+    padding-top: 40px;
+    max-width: 800px;
+    
    
    
    //  padding-top: 140px;
     img{
+    
      width: 80%;
     }
    
@@ -124,3 +127,66 @@
     }
   }
   }
+
+  @media (max-width: 1200px) {
+    .welcome-input{
+      padding-right: 35px;
+      padding-inline: 35px;
+    }
+    .login-page{
+      .logo-img{
+        width: 40%;
+      }
+      .login-img{
+        
+        img{
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+   
+    .login-page{
+      .login-img{
+        padding-top: 60px;
+        img{
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+   
+    .login-page{
+      .logo-img{
+        .signup-logo{
+          img{
+            width: 200px;
+          }
+        }
+      }
+      .login-img{
+        padding-top: 100px;
+        img{
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+   
+    .login-page{
+      .logo-img{
+      display: none;
+    }
+  }
+
+  .welcome-input{
+    padding-top: 50px;
+    padding-inline: 20px;
+  }
+}

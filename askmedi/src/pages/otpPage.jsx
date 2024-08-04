@@ -1,21 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import api from '../api'
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import Logo from  "../assets/images/logo.png"
 import "../assets/css/otp/otp.css"
 
 const OtpPage = () => {
-  const [otp, setOtp] = useState(['', '', '', '', '', '']); // 6-digit OTP
+  const [otp, setOtp] = useState(['', '', '', '', '', '']); 
   const [email, setEmail] = useState('');
   const location = useLocation();
-  const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)]; // 6 refs
+  const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
   const navigate = useNavigate();
+
   useEffect(() => {
     if (location.state && location.state.email) {
       setEmail(location.state.email);
     }
   }, [location]);
+
   const handleChange = (index, value) => {
     if (isNaN(value)) return; 
 
@@ -23,14 +25,12 @@ const OtpPage = () => {
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // Move to next input if value is entered
-    if (value !== '' && index < 5) { // Changed to 5 for 6-digit OTP
+    if (value !== '' && index < 5) { 
       inputRefs[index + 1].current.focus();
     }
   };
 
   const handleKeyDown = (index, e) => {
-    // Move to previous input on backspace if current input is empty
     if (e.key === 'Backspace' && index > 0 && otp[index] === '') {
       inputRefs[index - 1].current.focus();
     }
@@ -58,6 +58,19 @@ const OtpPage = () => {
     }
   };
 
+  const handleResendOTP = async () => {
+    try {
+      const response = await api.post('users/resend-otp/', { email: email });
+      toast.success(response.data.message);
+    } catch (error) {
+      if (error.response && error.response.data) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error('An error occurred while resending OTP');
+      }
+    }
+  };
+
   return (
     <div className='otp-main'>
       <div className="otp-logo">
@@ -66,7 +79,7 @@ const OtpPage = () => {
      <div className="otp-text">
       <div className="otp-header">
         <h1>Verify your Account</h1>
-        <p>Please enter the OTP code send to your email address</p>
+        <p>Please enter the OTP code sent to your email address</p>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -85,17 +98,15 @@ const OtpPage = () => {
           ))}
         </div>
         <div className="back-resend">
-          <p>Back to SignUp</p>
-          <h3>Resend Otp</h3>
+         <Link to={"/"}><p>Back to SignUp</p></Link> 
+          <h3 onClick={handleResendOTP} style={{ cursor: 'pointer' }}>Resend Otp</h3>
         </div>
         <div className="signup-button">
         <button type="submit">Verify</button>
         </div>
 
       </form>
-      <ToastContainer
-         position="top-center"
-         />
+      <ToastContainer position="top-center" />
      </div>
     </div>
   )

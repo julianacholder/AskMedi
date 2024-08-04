@@ -1,6 +1,11 @@
+a {
+  color: black;
+}
+
 .otp-main {
   background-color: #0882DE;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 40px;
 }
 .otp-main .otp-logo {
   padding-top: 15px;
@@ -26,10 +31,13 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+  padding-inline: 20px;
 }
 .otp-main form .otp-input-group input {
-  width: 80px;
-  height: 75px;
+  max-width: 80px;
+  width: 100%;
+  max-height: 75px;
+  height: 100%;
   border-radius: 8px;
   border: 2px solid #00A7ED;
   font-size: 45px;
@@ -60,7 +68,8 @@
   gap: 8px;
 }
 .otp-main form .signup-button button {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   border: none;
   font-size: 18px;
   padding: 15px;
@@ -69,4 +78,49 @@
   color: white;
   font-weight: 500;
   cursor: pointer;
+  margin-inline: 20px;
+}
+
+@media (max-width: 650px) {
+  .otp-main form .back-resend {
+    gap: 300px;
+  }
+}
+@media (max-width: 560px) {
+  .otp-main form .otp-input-group {
+    gap: 25px;
+  }
+  .otp-main form .otp-input-group input {
+    max-height: 62px;
+  }
+}
+@media (max-width: 510px) {
+  .otp-main p {
+    padding-inline: 10px;
+    text-align: center;
+  }
+  .otp-main form .otp-input-group {
+    gap: 20px;
+  }
+  .otp-main form .otp-input-group input {
+    max-height: 55px;
+  }
+  .otp-main form .back-resend {
+    gap: 200px;
+  }
+  .otp-main form .signup-button button {
+    max-width: 300px;
+  }
+}
+@media (max-width: 430px) {
+  .otp-main form .otp-input-group {
+    gap: 10px;
+  }
+  .otp-main form .otp-input-group input {
+    max-height: 55px;
+    font-size: 32px;
+  }
+  .otp-main form .back-resend {
+    gap: 100px;
+  }
 }/*# sourceMappingURL=otp.css.map */

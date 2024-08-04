@@ -3,18 +3,36 @@ import { Link, useNavigate } from 'react-router-dom';
 import api from '../api';
 import '../assets/css/dashboard/dashboard.css';
 import Logo from '../assets/images/logo.png';
+import ResLogo from '../assets/images/logo2.png';
 import Chatbot from './chatbotPage';
 import UserReport from './userReportPage';
 import Appsettings from './appsettingsPage';
 import { ToastContainer, toast } from 'react-toastify';
 
 const DashboardPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [userData, setUserData] = useState(null);
   const [username, setUsername] = useState('');
   const [initials, setInitials] = useState('');
   const [medicalHistory, setMedicalHistory] = useState([]);
   const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsUserMenuOpen(false);
+  };
+
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+    setIsMenuOpen(false);
+  };
+
+  const closeUserMenu = () => {
+    setIsUserMenuOpen(false);
+  };
+
 
   const fetchUserData = async () => {
     try {
@@ -89,6 +107,67 @@ const DashboardPage = () => {
        <ToastContainer
          position="top-center"
          />
+         <div className="responsive-logo">
+          <img src={ResLogo} alt="" />
+        </div>
+        <div className='responsive-nav'>
+      <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+        <div className="ini-bell">
+        <div className="responsive-initials" onClick={toggleUserMenu}>
+          <h1>{initials}</h1>
+        </div>
+        <div className="other-bell">
+              <i className="fa-solid fa-bell"></i>
+            </div>
+            </div>
+      </div>  
+      {isMenuOpen && (
+        <div className="responsive-menu">
+          <div className={`menu-item ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => handleTabClick(null, 'dashboard')}>
+            <i className="fa-solid fa-chart-bar"></i>
+            <span>Dashboard</span>
+          </div>
+          <div className={`menu-item ${activeTab === 'chatbot' ? 'active' : ''}`} onClick={() => handleTabClick(null, 'chatbot')}>
+            <i className="fa-solid fa-comment-medical"></i>
+            <span>Chatbot</span>
+          </div>
+          <div className={`menu-item ${activeTab === 'userreport' ? 'active' : ''}`} onClick={() => handleTabClick(null, 'userreport')}>
+            <i className="fa-solid fa-file-prescription"></i>
+            <span>User report</span>
+          </div>
+          <div className={`menu-item ${activeTab === 'personal' ? 'active' : ''}`} onClick={() => handleTabClick(null, 'personal')}>
+            <i className="fa-solid fa-user"></i>
+            <span>Personal</span>
+          </div>
+          <div className={`menu-item ${activeTab === 'appsettings' ? 'active' : ''}`} onClick={() => handleTabClick(null, 'appsettings')}>
+            <i className="fa-solid fa-gear"></i>
+            <span>App settings</span>
+          </div>
+          <div className="menu-item" onClick={signOut}>
+            <i className="fa-solid fa-right-from-bracket"></i>
+            <span>Sign out</span>
+          </div>
+        </div>
+      )}
+
+      {isUserMenuOpen && userData && (
+        <div className="user-menu">
+           <i className="fa-solid fa-times close-icon" onClick={closeUserMenu}></i>
+           <h2 className='user-menu-header'>User Profile</h2>
+          <div className="name-card">
+            <h2>{userData.fullname}</h2>
+          </div>
+          <div className='res-age'>
+          <p>Age: {userData.age}</p>
+          <p>Gender: {userData.gender}</p>
+          </div>
+        </div>
+      )}
+
       <div className="blue-side">
         <div className="signup-logo">
           <img src={Logo} alt="" />
@@ -139,16 +218,20 @@ const DashboardPage = () => {
         </div>
       </div>
 
+      
+
       <div className="dashboard-content">
+      
         {activeTab === 'dashboard' && (
+          
           <div className='row'>
-            <h1>Home/Dashboard</h1>
+            <h1 className='home-header'>Home/Dashboard</h1>
             <div className="hello-user">
               <div className="hand">
                 <i className="fa-solid fa-hand"></i>
               </div>
               <div className="header-text">
-                <h1>Hello, {userData ? userData.fullname : 'User'} </h1>
+                <h1 className='hello'>Hello, {userData ? userData.fullname : 'User'} </h1>
                 <p>Today is a good day to see how you're feeling. Your health status looks good, and you are 
                   close to reaching your daily activity goal. Keep it up!</p>
               </div>
@@ -208,7 +291,7 @@ const DashboardPage = () => {
 
         {activeTab === 'chatbot' && <Chatbot />}
         {activeTab === 'userreport' && <UserReport />}
-        {activeTab === 'personal' && <div><h1>Personal</h1></div>}
+        {activeTab === 'personal' && <div className='personal'><h1>Coming Soon</h1></div>}
         {activeTab === 'appsettings' && <Appsettings />}
       </div>
 

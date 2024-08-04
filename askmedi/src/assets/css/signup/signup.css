@@ -1,3 +1,26 @@
+.display {
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  gap: 10px;
+  display: none;
+}
+
+.mobile-signup {
+  border: none;
+  color: white;
+  background-color: #4966CC;
+  padding: 8px;
+  border-radius: 20px;
+  width: 120px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.mobile-signup:hover {
+  background-color: #224adc;
+}
+
 .signup-main {
   display: flex;
   justify-content: space-between;
@@ -5,7 +28,6 @@
 .signup-main .signup-welcome {
   background-color: #0882DE;
   width: 730px;
-  height: 800px;
 }
 .signup-main .signup-welcome .signup-logo {
   padding-top: 10px;
@@ -96,7 +118,7 @@
   text-align: center;
 }
 .signup-main .welcome-content .main-img img {
-  width: 70%;
+  width: 440px;
 }
 .signup-main .welcome-content .welcome-text {
   text-align: center;
@@ -112,4 +134,105 @@
 .signup-main .welcome-content .welcome-text p {
   font-size: 19px;
   color: white;
+}
+
+@media (max-width: 1080px) {
+  .signup-main .signup-welcome {
+    width: 50%;
+  }
+  .signup-main .signup-fields {
+    width: 60%;
+    padding-inline: 40px;
+  }
+  .signup-main .signup-fields h1 {
+    text-wrap: nowrap;
+  }
+}
+@media (max-width: 980px) {
+  .signup-main .welcome-content .main-img img {
+    width: 400px;
+  }
+  .signup-main .signup-welcome {
+    width: 50%;
+  }
+  .signup-main .signup-fields {
+    width: 50%;
+    padding-inline: 30px;
+  }
+}
+@media (max-width: 900px) {
+  .signup-main .welcome-content .welcome-text p {
+    padding: 10px;
+  }
+  .signup-main .welcome-content .welcome-text p br {
+    display: none;
+  }
+  .signup-main .welcome-content .main-img img {
+    width: 350px;
+  }
+  .signup-main .signup-fields h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 900px) {
+  .signup-main .welcome-content .welcome-text h1 {
+    font-size: 30px;
+    padding: 6px;
+  }
+  .signup-main .welcome-content .welcome-text p {
+    font-size: 16px;
+  }
+  .signup-main .welcome-content .main-img {
+    padding-top: 50px;
+  }
+  .signup-main .welcome-content .main-img img {
+    width: 320px;
+  }
+  .signup-main .signup-fields h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 750px) {
+  .signup-main .welcome-content .welcome-text h1 {
+    font-size: 35px;
+  }
+  .signup-main .welcome-content .welcome-text p {
+    font-size: 16px;
+  }
+  .signup-main .welcome-content .main-img {
+    padding-top: 0px;
+  }
+  .signup-main .welcome-content .main-img img {
+    width: 100%;
+  }
+  .signup-main .signup-welcome {
+    width: 100%;
+  }
+  .signup-main .signup-welcome .signup-logo {
+    padding-top: 10px;
+  }
+  .signup-main .signup-welcome .signup-logo img {
+    width: 200px;
+  }
+  .signup-fields {
+    display: none;
+  }
+  .signup-fields.show-mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    width: 100%;
+  }
+  .signup-welcome.hide-mobile {
+    display: none;
+  }
+  .display {
+    display: block;
+  }
 }/*# sourceMappingURL=signup.css.map */

@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
  height: 93%;
-
+width: 100%;
 }
 .chatbot-text{
-  width: 950px;
+  width: 100%;
   padding-left: 40px;
   padding-right: 10px;
   padding-top: 60px;
@@ -78,7 +78,9 @@
   margin-top: auto;
   gap: 15px;
   align-items: center;
- 
+  width: 100%;
+  padding-inline: 50px;
+  padding-top: 15px;
   input{
     border: none;
     background-color: #989393;
@@ -99,7 +101,10 @@
     color: white;
   }
 }
-
+.send-end{
+  gap: 10px;
+  display: flex;
+}
 
 
 .gray-reply{
@@ -108,4 +113,91 @@
   padding: 30px;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 1080px) {
+  .chat-container{
+    padding-top: 80px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+ .chatbot-text{
+  .bot-reply{
+    .gray-reply{
+      padding: 25px;
+      text-align:start;
+    }
+  }
+ }
+}
+
+@media (max-width: 560px) {
+  .chatbot-text{
+    padding-left: 20px;
+  }
+  .respond-area{
+    padding-inline: 30px;
+  }
+}
+@media (max-width:500px) {
+  .respond-area{
+    flex-direction: column;
+    input{
+      width: 100%;
+    }
+    .send{
+      width: 90px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .chatbot-text{
+    padding-left: 10px;
+    .bot-reply{
+      .gray-reply{
+        padding: 15px;
+      }
+    }
+
+    .user-reply{
+      .blue-reply{
+        padding: 15px;
+      }
+    }
+  }
+  .respond-area{
+    padding-inline: 30px;
+  }
+}
+
+@media (max-width:425px) {
+  .bot-image{
+    scale: 0.8;
+  }
+  .chatbot-text{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 40px;
+    .user-reply{
+      .user-profile-pic{
+        scale: 0.8;
+      }
+      .blue-reply{
+        padding: 10px;
+      }
+    }
+    .bot-reply{
+     
+      .gray-reply{
+        padding: 10px;
+      }
+    }
+  }
+  .respond-area{
+    padding-inline: 10px;
+  }
 }

@@ -1,6 +1,19 @@
 @import "../variable.scss";
 
-
+.user-report{
+  width: 100%;
+}
+.no-reports{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+  text-align: center;
+  h1{
+    font-size: 40px;
+    color: $secondary-color;
+  }
+}
 
 .individual-report{
   display: flex;
@@ -8,7 +21,7 @@
   background-color: white;
   border-radius: 20px;
   padding: 25px;
-  width: 950px;
+  width: 100%;
  
   .left-report{
     display: flex;
@@ -89,6 +102,7 @@
   justify-content: center;
   align-items: center;flex-direction: column;
   gap: 35px;
+  width: 100%;
 }
 
 .download{
@@ -97,4 +111,58 @@
   justify-content: flex-end;
   padding-top: 8px;
   cursor: pointer;
+}
+
+@media (max-width:1080px) {
+  .user-report{
+    padding-top: 80px;
+
+   .user-h1{
+      text-align: center;
+    }
+  }
+ 
+}
+
+@media (max-width: 570px) {
+  .individual-report{
+    .left-report{
+      .other{
+        .diagosis{
+          p{
+            padding-inline: 0px;
+           
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 525px) {
+  .individual-report{
+    flex-direction: column;
+    .left-report{
+      .other{
+        .diagosis{
+          p{
+            padding-inline: 10px;
+           
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .individual-report{
+    flex-direction: column;
+    .left-report{
+      .other{
+        .diagosis{
+         flex-direction: column;
+         align-items: flex-start;
+        }
+      }
+    }
+  }
 }

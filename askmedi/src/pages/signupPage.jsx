@@ -17,6 +17,7 @@ const SignupPage = () => {
     age: '',
     password: '',
   });
+  const [showSignupFields, setShowSignupFields] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -39,13 +40,15 @@ const SignupPage = () => {
     }
   };
 
+  const toggleSignupFields = () => {
+    setShowSignupFields(!showSignupFields);
+  };
+
   return (
     <div className='signup-content'>
-         <ToastContainer
-         position="top-center"
-         />
+      <ToastContainer position="top-center" />
       <div className='signup-main'>
-        <div className="signup-fields">
+        <div className={`signup-fields ${showSignupFields ? 'show-mobile' : ''}`}>
           <h1>Create a Profile</h1>
           <form onSubmit={handleSubmit}>
             <div className='input-field'>
@@ -110,8 +113,6 @@ const SignupPage = () => {
               <label htmlFor="">I agree to the <span>terms & policy</span></label>
             </div>
 
-      
-
             <div className="signup-button">
               <button type="submit">Signup</button>
               <h4>Or</h4>
@@ -120,13 +121,17 @@ const SignupPage = () => {
           </form>
         </div>
 
-        <div className="signup-welcome">
+        <div className={`signup-welcome ${showSignupFields ? 'hide-mobile' : ''}`}>
           <div className="signup-logo">
             <img src={Logo} alt="Logo" />
           </div>
           <div className="welcome-content">
             <div className='welcome-text'>
               <h1>Welcome to AskMedi!</h1>
+              <div className='display'>
+                <button className='mobile-signup' onClick={toggleSignupFields}>Sign up</button>
+               <Link to={"/login"}><button className='mobile-signup'>Login</button></Link> 
+              </div>
               <p>AskMedi is your trusted AI-powered online <br /> health assistant, providing instant answers <br />
                 to your medical questions and personalized <br />
                 diagnosis support.</p>

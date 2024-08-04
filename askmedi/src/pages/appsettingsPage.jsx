@@ -5,7 +5,7 @@ import Settings from "../assets/images/Group 1000011159 (1).png"
 const Appsettings = () => {
   return (
     <div className='app-settings'>
-      <h1>Settings</h1>
+      <h1 className='settings-header'>Settings</h1>
       <div className="first-part">
       <div className="left-settings">
         <div className="left-initial">

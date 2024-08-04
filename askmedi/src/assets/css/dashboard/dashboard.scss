@@ -2,16 +2,37 @@
 a{
   text-decoration: none;
 }
+.personal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+  text-align: center;
+  
+  background-color: #F3F3F3;
+  h1{
+    font-size: 40px;
+    color: $secondary-color;
+  }
+}
+
+.responsive-logo{
+  display: none;
+  img{
+    max-width: 200px;
+  }
+}
 
 .dashboard{
   display: flex;
   background-color: #F3F3F3;
-  
+  width: 100%;
 }
 .row{
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 
 .icon-name {
@@ -31,10 +52,10 @@ a{
 
 
 .blue-side{
-  width: 360px;
+  width: 15%;
   background-color: $primary-color;
   padding-bottom: 30px;
-
+  
 
 
   .signup-logo{
@@ -51,17 +72,23 @@ text-align: center;
 
 
 
+
   .active-tabs{
     padding-top: 5px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    display: flex;
+    flex-direction: column;
+   
+    
   }
 
   .app-sign{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    justify-content: center;
     .start{
       border: none;
       color: white;
@@ -110,6 +137,7 @@ text-align: center;
   display: flex;
   padding-bottom: 20px;
   gap: 30px;
+  width: 65%;
   h1{
     font-size: 18px;
     font-weight: 500;
@@ -146,12 +174,13 @@ text-align: center;
 
   .how-feeling{
     display: flex;
-    gap: 50px;
+    gap: 20px;
 
     .smile-text{
       background-color: white;
       padding: 20px;
-      width: 280px;
+      width: 300px;
+      width: 100%;
       text-align: center;
       border-radius: 20px;
       display: flex;
@@ -233,14 +262,14 @@ text-align: center;
   }
 }
 .dashboard-profile{
-  width: 400px;
+  width: 20%;
   background-color: $primary-color;
   padding-right: 10px;
   .outer-border{
     margin-top: 38px;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    width: 300px;
+    max-width: 300px;
     border-radius: 20px;
     height: 720px;
     margin-left: 10px;
@@ -251,7 +280,7 @@ text-align: center;
   .user-details{
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-    width: 283px;
+    width: 105%;
     border-radius: 20px;
     height: 250px;
     display: flex;
@@ -348,13 +377,479 @@ text-align: center;
 
   ul{
     display: grid;
-    grid-template-columns: 52% 50%;
+    grid-template-columns: 1fr 1fr;
      color: white;
     list-style: none;
     gap: 7px;
     padding-left: 20px;
     padding-right: 5px;
+  
   }
  
  
+}
+.hamburger {
+
+  display: none;
+
+  flex-direction: column;
+
+  cursor: pointer;
+
+  z-index: 11;
+
+
+
+
+  div {
+
+    width: 27px;
+
+    height: 4px;
+
+    background-color: black;
+
+    margin: 3px 0;
+
+    transition: all 0.3s;
+
+    border-radius: 20px;
+
+  }
+
+}
+
+
+
+
+.hamburger.open {
+
+  div {
+
+    background-color: black;
+
+    width: 28px;
+
+   
+
+  }
+
+
+
+
+
+
+  div:nth-child(1) {
+
+    transform: rotate(40deg) translate(9px, 9px);
+
+  }
+
+
+
+
+  div:nth-child(2) {
+
+    opacity: 0;
+
+  }
+
+
+
+
+  div:nth-child(3) {
+
+    transform: rotate(-46deg) translate(5px, -5px);
+
+  }
+
+}
+
+.responsive-menu{
+  display: none;
+}
+.responsive-nav {
+  display: flex;
+  position: absolute;
+  padding-top: 100px;
+  align-items: center;
+  justify-content: space-between; 
+  padding-inline: 40px;
+  width: 100%; // Ensure the width is set to enable spacing
+  display: none;
+  .ini-bell {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+
+    .responsive-initials {
+      background-color: $secondary-color;
+      border-radius: 50%;
+      width: fit-content;
+      height: fit-content;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 25px;
+        color: white;
+      }
+    }
+
+    .other-bell {
+      background-color: $secondary-color;
+      border-radius: 50%;
+      width: 48px;
+      height: 45px;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 20px;
+        color: white;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width:1380px) {
+  .icon-name{
+    padding-left: 30px;
+    &.active{
+      padding-left: 30px; 
+    }
+  }
+  .blue-side{
+    .dashboard-tabs{
+      .app-sign{
+        .start{
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .dashboard-profile{
+    .user-details{
+      .initials{
+        h1{
+          font-size: 35px;
+        }
+        
+      }
+      .name{
+        h2{
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:1245px) {
+  .icon-name{
+    padding-left: 20px;
+    &.active{
+      padding-left: 20px; 
+    }
+  }
+  .blue-side{
+    .dashboard-tabs{
+      .app-sign{
+        .start{
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  .dashboard-profile{
+    .user-details{
+      .gender-age{
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width:1150px) {
+  .icon-name{
+    padding-left: 10px;
+    &.active{
+      padding-left: 10px; 
+    }
+  }
+  .blue-side{
+    .signup-logo{
+      img{
+        width: 170px;
+      }
+    }
+    .dashboard-tabs{
+      .app-sign{
+        .start{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .dashboard-profile{
+    .user-details{
+      .gender-age{
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .blue-side{
+    display: none;
+  }
+  .dashboard-profile{
+    display: none;
+  }
+  .dashboard-content{
+    width: 100%;
+    padding-top: 90px;
+    display: block;
+    .home-header{
+      text-align: center;
+    }
+  }
+  .responsive-logo{
+    display: block;
+    position: absolute;
+    padding-top: 10px;
+  }
+  .row{
+    padding-top: 80px;
+  }
+  .hamburger {
+
+    display: flex;
+
+    // position: absolute;
+    z-index: 10;
+    top: 80px;
+
+   
+
+  }
+  .responsive-nav{
+    display: flex;
+  }
+  
+  .responsive-menu {
+    position: fixed;
+    top: 150px;
+    left: 20px;
+    width: 400px;
+    height: calc(90vh - 60px);
+    background: $primary-color;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 9;
+    color: white;
+    font-size: 20px;
+    display: block;
+  }
+
+  .menu-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .menu-item i {
+    margin-right: 10px;
+  }
+
+  .menu-item.active {
+    background: $secondary-color;
+  }
+
+  .user-menu {
+    position: fixed;
+    top: 160px;
+    right: 30px;
+    width: 300px;
+    height: 180px;
+    padding: 15px;
+    background: $primary-color;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 9;
+    color: white;
+    .user-menu-header{
+      text-align: center;
+      color: white;
+    }
+    .res-age{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      padding-top: 4px;
+    }
+  }
+
+  .name-card{
+    padding-top: 15px;
+    text-align: center;
+
+   h2{
+    font-weight: 500;
+   }
+  }
+
+  .close-icon {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+
+}
+
+@media (max-width: 660px) {
+  .dashboard-content{
+    .how-feeling{
+      .smile-text{
+        padding: 10px;
+      }
+    }
+    .medical-why{
+      gap: 20px;
+      .why{
+        padding: 20px;
+        height: fit-content;
+      }
+    }
+  }
+}
+@media (max-width: 540px) {
+  .dashboard-content{
+    .how-feeling{
+      flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+      .smile-text{
+        padding: 10px;
+      }
+    }
+    .medical-why{
+     flex-direction: column;
+    .medical{
+      width: 100%;
+    }
+    .why{
+      width: 100%;
+    }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .dashboard-content{
+    h1{
+      font-size: 16px;
+    }
+    .how-feeling{
+      .smile-text{
+        h2{
+          font-size: 18px;
+        }
+        p{
+          font-size: 15px;
+        }
+      }
+    }
+    .home-header{
+      font-size: 16px;
+    }
+    .hello{
+      padding-left: 34px;
+      padding-top: 20px;
+    }
+    .hello-user{
+     padding: 15px;
+      i{
+        font-size: 40px;
+        position: absolute;
+      }
+      p{
+        padding-top: 4px;
+        font-size: 15px;
+      }
+      h1{
+        font-size: 18px;
+      }
+    }
+    .medical-why{
+      p{
+        font-size: 15px;
+      }
+      .medical{
+
+        padding: 15px;
+        
+      }
+    }
+  }
+  .responsive-logo{
+    img{
+      width: 160px;
+    }
+  }
+
+  .hamburger{
+    scale: 0.8;
+  }
+  .responsive-nav{
+    padding-inline: 15px;
+   
+    .ini-bell{
+      scale: 0.8;
+    }
+  }
+  .responsive-menu{
+    left: 0px;
+    font-size: 18px;
+  }
+
+  .row{
+    gap: 20px;
+  }
+  .user-menu{
+    width: 280px;
+    height: 160px;
+    h2{
+      font-size: 20px;
+    }
+
+    .res-age{
+      p{
+        font-size: 16px;
+      }
+    }
+  }
+  .name-card{
+    h2{
+      font-size: 18px;
+    }
+    
+  }
 }
