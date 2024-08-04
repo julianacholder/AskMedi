@@ -58,7 +58,7 @@ function ChatComponent() {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/chat', { message: input });
+      const response = await axios.post('https://askmedi-node-backend.onrender.com/chat', { message: input });
       setMessages([...newMessages, { role: 'assistant', content: response.data.reply }]);
     } catch (error) {
       console.error('Error:', error);
@@ -68,7 +68,7 @@ function ChatComponent() {
   const endConversation = async () => {
     const user_Id = localStorage.getItem('id');
     try {
-      const response = await axios.post('http://localhost:3001/end-conversation', {
+      const response = await axios.post('https://askmedi-node-backend.onrender.com/end-conversation', {
         user_Id: user_Id
       });
       console.log(user_Id);
@@ -99,7 +99,7 @@ function ChatComponent() {
               )}
               {msg.role === 'user' && (
                 <div className='user-reply'>
-                  <div className='user-profile-pic'>{initials}</div>
+                  <div className='user-profile-pic'><h1>{initials}</h1></div>
                   <span className='blue-reply'>{msg.content}</span>
                 </div>
               )}

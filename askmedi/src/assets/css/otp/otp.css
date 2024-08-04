@@ -4,7 +4,7 @@ a {
 
 .otp-main {
   background-color: #0882DE;
-  height: 100%;
+  height: 100vh;
   padding-bottom: 40px;
 }
 .otp-main .otp-logo {

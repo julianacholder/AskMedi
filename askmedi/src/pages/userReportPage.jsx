@@ -16,7 +16,7 @@ const UserReport = () => {
     const token = localStorage.getItem('token');
 
     if (userId) {
-      axios.get(`http://127.0.0.1:8000/users/user-summaries/${userId}/`, {
+      axios.get(`https://django-askmedi.onrender.com/users/user-summaries/${userId}/`, {
        
       })
         .then(response => {
@@ -49,8 +49,8 @@ const UserReport = () => {
     html2canvas(input).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF();
-      const imgWidth = 210; // A4 width in mm
-      const pageHeight = 295; // A4 height in mm
+      const imgWidth = 210; 
+      const pageHeight = 295;
       const imgHeight = canvas.height * imgWidth / canvas.width;
       let heightLeft = imgHeight;
       let position = 0;
