@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   margin-left: 40px;
-  gap: 10px;
+  gap: 20px;
   display: none;
 }
 
@@ -233,6 +233,7 @@
     display: none;
   }
   .display {
-    display: block;
+    display: flex;
+    background-color: blue;
   }
 }/*# sourceMappingURL=signup.css.map */
