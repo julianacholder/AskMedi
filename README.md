@@ -31,6 +31,8 @@ AskMedi is a web-based application that provides users with preliminary medical 
 - Axios for API requests
 - CSS for styling
 - JWT for authentication
+- Node.js
+- Django
 
 ## Getting Started
 
@@ -53,78 +55,6 @@ npm install
 4. Start the development server:
 npm start
 
-The application should now be running on `http://localhost:3000`.
-
-## Usage
-
-1. Sign up for a new account or log in if you already have one.
-2. Navigate to the chatbot interface.
-3. Describe your symptoms when prompted by the chatbot.
-4. Receive a preliminary diagnosis based on your reported symptoms.
-5. View your diagnosis history in the user report section.
-6. Download your diagnosis reports as needed.
-
-## Project Structure
-
-I apologize for the misunderstanding. Here's the complete README code in a single block:
-markdownCopy# AskMedi - Medical Diagnosis Application
-
-AskMedi is a web-based application that provides users with preliminary medical diagnoses based on reported symptoms. It utilizes a React frontend for a smooth, interactive user experience.
-
-## Table of Contents
-
-1. [Features](#features)
-2. [Technologies Used](#technologies-used)
-3. [Getting Started](#getting-started)
-   - [Prerequisites](#prerequisites)
-   - [Installation](#installation)
-4. [Usage](#usage)
-5. [Project Structure](#project-structure)
-6. [API Endpoints](#api-endpoints)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Contact](#contact)
-
-## Features
-
-- User authentication (signup, login, logout)
-- Chatbot interface for symptom reporting
-- AI-powered preliminary medical diagnosis
-- User profile management
-- View and download past diagnosis reports
-
-## Technologies Used
-
-- React.js
-- React Router for navigation
-- Axios for API requests
-- CSS for styling
-- JWT for authentication
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14.0.0 or later)
-- npm (v6.0.0 or later)
-
-### Installation
-
-1. Clone the repository:
-git clone https://github.com/yourusername/askmedi-frontend.git
-Copy
-2. Navigate to the project directory:
-cd askmedi-frontend
-Copy
-3. Install dependencies:
-npm install
-Copy
-4. Create a `.env` file in the root directory and add your environment variables:
-REACT_APP_API_URL=http://your-backend-api-url
-Copy
-5. Start the development server:
-npm start
-Copy
 The application should now be running on `http://localhost:3000`.
 
 ## Usage
