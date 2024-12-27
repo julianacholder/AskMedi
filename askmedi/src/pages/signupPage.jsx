@@ -1,5 +1,6 @@
+// src/pages/SignupPage.js
 import React, { useState } from 'react';
-import api from '../api'
+import api from '../api'; // Adjust the path as necessary
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,6 +9,7 @@ import "../assets/css/main.css";
 import "../assets/css/signup/signup.css";
 import Logo from "../assets/images/logo.png";
 import Welcome from "../assets/images/welcomeimg.png";
+import Loader from '../assets/components/loader'; 
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +20,7 @@ const SignupPage = () => {
     password: '',
   });
   const [showSignupFields, setShowSignupFields] = useState(false);
+  const [loading, setLoading] = useState(false); // Add loading state
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -27,16 +30,19 @@ const SignupPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
- 
+    setLoading(true); // Show loader
+
     try {
       const response = await api.post('users/register/', formData);
       toast.success("Registration Successful");
       setTimeout(() => {
         navigate('/otp', { state: { email: formData.email } });
-      }, 2000); 
+        setLoading(false); // Hide loader
+      }, 2000);
     } catch (error) {
       toast.error("Something went wrong. Please try again!");
-      console.log(error.response)
+      console.log(error.response);
+      setLoading(false); // Hide loader
     }
   };
 
@@ -47,6 +53,7 @@ const SignupPage = () => {
   return (
     <div className='signup-content'>
       <ToastContainer position="top-center" />
+      {loading && <Loader />} {/* Show loader when loading is true */}
       <div className='signup-main'>
         <div className={`signup-fields ${showSignupFields ? 'show-mobile' : ''}`}>
           <h1>Create a Profile</h1>
@@ -130,7 +137,7 @@ const SignupPage = () => {
               <h1>Welcome to AskMedi!</h1>
               <div className='display'>
                 <button className='mobile-signup' onClick={toggleSignupFields}>Sign up</button>
-               <Link to={"/login"}><button className='mobile-signup'>Login</button></Link> 
+                <Link to={"/login"}><button className='mobile-signup'>Login</button></Link>
               </div>
               <p>AskMedi is your trusted AI-powered online <br /> health assistant, providing instant answers <br />
                 to your medical questions and personalized <br />
@@ -148,4 +155,5 @@ const SignupPage = () => {
 };
 
 export default SignupPage;
+
 

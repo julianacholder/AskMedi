@@ -4,7 +4,8 @@
 }
 .left-settings .left-initial {
   background-color: #00A7ED;
-  width: 90px;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 85px;
   border-radius: 20px;
   padding: 10px;

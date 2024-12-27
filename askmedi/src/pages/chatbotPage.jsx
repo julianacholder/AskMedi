@@ -4,6 +4,7 @@ import api from '../api';
 import "../assets/css/chatbot/chatbot.css";
 import Bot from "../assets/images/bot.png";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ChatComponent() {
   const [input, setInput] = useState('');
@@ -57,11 +58,27 @@ function ChatComponent() {
       });
     }
 
+    // Show loading toast
+    const loadingToast = toast.loading("AskMedi is thinking...", {
+      position: "top-center",
+      closeOnClick: false,
+      closeButton: false,
+      draggable: false,
+    });
+
     try {
       const response = await axios.post('https://askmedi-node-backend.onrender.com/chat', { message: input });
       setMessages([...newMessages, { role: 'assistant', content: response.data.reply }]);
+      // Dismiss loading toast on success
+      toast.dismiss(loadingToast);
     } catch (error) {
       console.error('Error:', error);
+      // Dismiss loading toast and show error
+      toast.dismiss(loadingToast);
+      toast.error("Failed to get response from bot", {
+        position: "top-center",
+        autoClose: 3000
+      });
     }
   };
 
@@ -85,6 +102,14 @@ function ChatComponent() {
       <ToastContainer
         position="top-center"
         autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
       />
       <h1>Home/Chatbot</h1>
       <div className="chatbot-text">
