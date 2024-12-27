@@ -1,6 +1,5 @@
-// src/pages/SignupPage.js
 import React, { useState } from 'react';
-import api from '../api'; // Adjust the path as necessary
+import api from '../api';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,7 +8,7 @@ import "../assets/css/main.css";
 import "../assets/css/signup/signup.css";
 import Logo from "../assets/images/logo.png";
 import Welcome from "../assets/images/welcomeimg.png";
-import Loader from '../assets/components/loader'; 
+import Loader from '../assets/components/loader';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -20,29 +19,117 @@ const SignupPage = () => {
     password: '',
   });
   const [showSignupFields, setShowSignupFields] = useState(false);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const navigate = useNavigate();
+
+  const validateForm = () => {
+    // Check for empty fields
+    if (!formData.fullname.trim()) {
+      toast.error('Please enter your full name');
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address');
+      return false;
+    }
+
+    // Password validation (minimum 6 characters)
+    if (formData.password.length < 6) {
+      toast.error('Password must be at least 6 characters long');
+      return false;
+    }
+
+    // Age validation
+    if (!formData.age || formData.age < 1 || formData.age > 120) {
+      toast.error('Please enter a valid age between 1 and 120');
+      return false;
+    }
+
+    // Gender validation
+    if (!formData.gender) {
+      toast.error('Please select your gender');
+      return false;
+    }
+
+    // Terms acceptance validation
+    if (!termsAccepted) {
+      toast.error('Please accept the terms and policy');
+      return false;
+    }
+
+    return true;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Real-time validation
+    switch (name) {
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (value && !emailRegex.test(value)) {
+          toast.warn('Please enter a valid email address', {
+            autoClose: 2000,
+            toastId: 'emailValidation'
+          });
+        }
+        break;
+      case 'password':
+        if (value && value.length < 6) {
+          toast.warn('Password should be at least 6 characters', {
+            autoClose: 2000,
+            toastId: 'passwordValidation'
+          });
+        }
+        break;
+      case 'age':
+        if (value && (value < 1 || value > 120)) {
+          toast.warn('Please enter a valid age', {
+            autoClose: 2000,
+            toastId: 'ageValidation'
+          });
+        }
+        break;
+      default:
+        break;
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loader
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const response = await api.post('users/register/', formData);
       toast.success("Registration Successful");
       setTimeout(() => {
         navigate('/otp', { state: { email: formData.email } });
-        setLoading(false); // Hide loader
+        setLoading(false);
       }, 2000);
     } catch (error) {
-      toast.error("Something went wrong. Please try again!");
+      if (error.response?.data) {
+        if (error.response.data.email) {
+          toast.error("Email already exists");
+        } else if (error.response.data.password) {
+          toast.error(error.response.data.password[0]);
+        } else {
+          toast.error("Registration failed. Please try again!");
+        }
+      } else {
+        toast.error("Something went wrong. Please try again!");
+      }
       console.log(error.response);
-      setLoading(false); // Hide loader
+      setLoading(false);
     }
   };
 
@@ -52,8 +139,19 @@ const SignupPage = () => {
 
   return (
     <div className='signup-content'>
-      <ToastContainer position="top-center" />
-      {loading && <Loader />} {/* Show loader when loading is true */}
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {loading && <Loader />}
       <div className='signup-main'>
         <div className={`signup-fields ${showSignupFields ? 'show-mobile' : ''}`}>
           <h1>Create a Profile</h1>
@@ -96,7 +194,7 @@ const SignupPage = () => {
               <input
                 type="number"
                 name="age"
-                placeholder=''
+                placeholder='Enter your age'
                 value={formData.age}
                 onChange={handleChange}
               />
@@ -116,7 +214,11 @@ const SignupPage = () => {
             </div>
 
             <div className='inputs-field'>
-              <input type="checkbox" />
+              <input 
+                type="checkbox"
+                checked={termsAccepted}
+                onChange={(e) => setTermsAccepted(e.target.checked)}
+              />
               <label htmlFor="">I agree to the <span>terms & policy</span></label>
             </div>
 
