@@ -24,38 +24,32 @@ const SignupPage = () => {
   const navigate = useNavigate();
 
   const validateForm = () => {
-    // Check for empty fields
     if (!formData.fullname.trim()) {
       toast.error('Please enter your full name');
       return false;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast.error('Please enter a valid email address');
       return false;
     }
 
-    // Password validation (minimum 6 characters)
     if (formData.password.length < 6) {
       toast.error('Password must be at least 6 characters long');
       return false;
     }
 
-    // Age validation
     if (!formData.age || formData.age < 1 || formData.age > 120) {
       toast.error('Please enter a valid age between 1 and 120');
       return false;
     }
 
-    // Gender validation
     if (!formData.gender) {
       toast.error('Please select your gender');
       return false;
     }
 
-    // Terms acceptance validation
     if (!termsAccepted) {
       toast.error('Please accept the terms and policy');
       return false;
@@ -68,7 +62,7 @@ const SignupPage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Real-time validation
+    // Real-time validation only for email and age
     switch (name) {
       case 'email':
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -76,14 +70,6 @@ const SignupPage = () => {
           toast.warn('Please enter a valid email address', {
             autoClose: 2000,
             toastId: 'emailValidation'
-          });
-        }
-        break;
-      case 'password':
-        if (value && value.length < 6) {
-          toast.warn('Password should be at least 6 characters', {
-            autoClose: 2000,
-            toastId: 'passwordValidation'
           });
         }
         break;
@@ -97,6 +83,17 @@ const SignupPage = () => {
         break;
       default:
         break;
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    
+    if (name === 'password' && value && value.length < 6) {
+      toast.warn('Password should be at least 6 characters', {
+        autoClose: 2000,
+        toastId: 'passwordValidation'
+      });
     }
   };
 
@@ -186,6 +183,7 @@ const SignupPage = () => {
                 placeholder='******'
                 value={formData.password}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
             </div>
 
