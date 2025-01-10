@@ -32,7 +32,7 @@ AskMedi is a web-based application that provides users with preliminary medical 
 - CSS for styling
 - JWT for authentication
 - Node.js
-- Django
+- Django Repo (https://github.com/julianacholder/Django-AskMedi)
 
 ## Getting Started
 
